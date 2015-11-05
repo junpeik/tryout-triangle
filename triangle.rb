@@ -1,16 +1,14 @@
 #coding: utf-8
 class Triangle
 
-  def initialize
-    @args = ARGV.map{ |i| i.to_i }
+  def initialize(input)
+    #@args = ARGV.map{ |i| i.to_i }
+    @args = input.map{ |i| i.to_i }
     @args.sort!
   end
 
   def check_triangle
-    if not_triangle?
-      puts '三角形じゃないです＞＜'
-      return
-    end
+    return '三角形じゃないです＞＜' if not_triangle?
     triangle_shape
   end
 
@@ -28,11 +26,11 @@ class Triangle
     def triangle_shape
       case same_edge_num
       when 0
-        puts '不等辺三角形ですね！'
+        '不等辺三角形ですね！'
       when 1
-        puts '二等辺三角形ですね！'
+        '二等辺三角形ですね！'
       when 3
-        puts '正三角形ですね！'
+        '正三角形ですね！'
       end
     end
 end
